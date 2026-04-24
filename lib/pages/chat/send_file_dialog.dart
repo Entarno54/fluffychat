@@ -61,7 +61,7 @@ class SendFileDialogState extends State<SendFileDialog> {
         final MatrixFile file;
         MatrixImageFile? thumbnail;
         final length = await xfile.length();
-        final mimeType = xfile.mimeType ?? lookupMimeType(xfile.path);
+        final mimeType = xfile.mimeType ?? lookupMimeType(xfile.path, headerBytes: []);
 
         // Generate video thumbnail
         if (PlatformInfos.isMobile &&
